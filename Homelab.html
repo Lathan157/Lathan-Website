@@ -60,126 +60,312 @@
   </header>
 
   <!-- Infrastructure -->
-  <section id="infrastructure" class="section">
-    <div class="container">
-      <h2 class="section-title">Infrastructure</h2>
-      <p class="text-center mb-4">Five nodes with distinct roles, plus one remote backup node.</p>
-      <div class="row g-4 text-center">
-        <div class="col-md-6 col-lg-4">
-          <div class="content-card p-3 h-100">
-            <img src="pictures/Logos/Homelab SVG/proxmox.svg" alt="Proxmox" style="max-height:60px;" class="mb-2">
-            <h5>Node 1 – Storage</h5>
-            <p>Ryzen 5 3600 · 80GB RAM · RTX 3060<br>Primary TrueNAS SCALE host, multiple ZFS pools, Plex VM.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="content-card p-3 h-100">
-            <img src="pictures/Logos/Homelab SVG/opnsense.svg" alt="OPNsense" style="max-height:60px;" class="mb-2">
-            <h5>Node 2 – Routing</h5>
-            <p>i9-9900K · OPNsense VM (firewall/router), OpenWRT VM (PPPoE). Networking core.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="content-card p-3 h-100">
-            <img src="pictures/Logos/Homelab SVG/tailscale.svg" alt="Tailscale" style="max-height:60px;" class="mb-2">
-            <h5>Node 3 – Remote Access</h5>
-            <p>Intel N97 Mini PC · Runs Tailscale, Monit, and Nextcloud. Provides monitoring & diagnostics.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="content-card p-3 h-100">
-            <img src="pictures/Logos/Homelab SVG/frigate.svg" alt="Frigate" style="max-height:60px;" class="mb-2">
-            <h5>Node 4 – Secondary</h5>
-            <p>Ryzen 5 3600 · RTX 3060<br>Hosts Frigate NVR, Obico AI, and secondary TrueNAS pools.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="content-card p-3 h-100">
-            <img src="pictures/Logos/Homelab SVG/nextcloud.svg" alt="Nextcloud" style="max-height:60px;" class="mb-2">
-            <h5>Remote Node</h5>
-            <p>Dell OptiPlex · Located offsite, used for backups and remote monitoring.</p>
-          </div>
+<section id="infrastructure" class="section">
+  <div class="container">
+    <h2 class="section-title">Infrastructure</h2>
+    <p class="text-center mb-4">Five nodes with distinct roles, plus one remote backup node.</p>
+    <div class="row g-4 text-center">
+      
+      <div class="col-md-6 col-lg-4">
+        <div class="content-card p-3 h-100">
+          <img src="pictures/logos/homelab-svg/proxmox.svg" alt="Proxmox" style="max-height:60px;" class="mb-2">
+          <h5>Node 1 – Storage</h5>
+          <p>Ryzen 5 3600 · 80GB RAM · RTX 3060<br>Primary TrueNAS SCALE host, multiple ZFS pools, Plex VM.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Storage -->
-  <section id="storage" class="section alt">
-    <div class="container">
-      <h2 class="section-title">Storage</h2>
-      <p class="text-center mb-4">TrueNAS SCALE manages multiple ZFS pools across SAS and SATA drives.</p>
-      <div class="table-responsive">
-        <table class="table table-dark table-striped">
-          <thead><tr><th>Pool</th><th>Configuration</th><th>Purpose</th></tr></thead>
-          <tbody>
-            <tr><td>Hornet</td><td>12TB single disk</td><td>Bulk Plex media</td></tr>
-            <tr><td>Knight</td><td>6×6TB SAS · RAIDZ2</td><td>Main storage</td></tr>
-            <tr><td>Greenpath</td><td>2×4TB mirror</td><td>Backups</td></tr>
-            <tr><td>Deepnest</td><td>4×2TB RAIDZ1</td><td>Secondary data</td></tr>
-          </tbody>
-        </table>
+      <div class="col-md-6 col-lg-4">
+        <div class="content-card p-3 h-100">
+          <img src="pictures/logos/homelab-svg/opnsense.svg" alt="OPNsense" style="max-height:60px;" class="mb-2">
+          <h5>Node 2 – Routing</h5>
+          <p>i9-9900K · OPNsense VM (firewall/router), OpenWRT VM (PPPoE). Networking core.</p>
+        </div>
       </div>
-      <p class="text-center mt-3 text-white-50">Daily scrubs · SMART health monitoring · Offsite replication</p>
-    </div>
-  </section>
 
-  <!-- Networking -->
-  <section id="networking" class="section">
-    <div class="container">
-      <h2 class="section-title">Networking</h2>
-      <p class="text-center mb-4">Bell 3 Gbps Fiber → OpenWRT → OPNsense with VLAN segmentation.</p>
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead><tr><th>VLAN</th><th>Subnet</th><th>Purpose</th></tr></thead>
-          <tbody>
-            <tr><td>5</td><td>192.168.5.0/24</td><td>Trusted LAN (PCs, phones)</td></tr>
-            <tr><td>15</td><td>192.168.15.0/24</td><td>Servers</td></tr>
-            <tr><td>25</td><td>192.168.25.0/24</td><td>Media</td></tr>
-            <tr><td>45</td><td>192.168.45.0/24</td><td>IoT</td></tr>
-            <tr><td>70</td><td>192.168.70.0/24</td><td>CCTV</td></tr>
-          </tbody>
-        </table>
+      <div class="col-md-6 col-lg-4">
+        <div class="content-card p-3 h-100">
+          <img src="pictures/logos/homelab-svg/tailscale.svg" alt="Tailscale" style="max-height:60px;" class="mb-2">
+          <h5>Node 3 – Remote Access</h5>
+          <p>Intel N97 Mini PC · Runs Tailscale, Monit, and Nextcloud. Provides monitoring & diagnostics.</p>
+        </div>
       </div>
-      <p class="text-center text-white-50">
-        <img src="pictures/Logos/Homelab SVG/ubiquiti.svg" alt="Ubiquiti" style="max-height:30px;"> Ubiquiti US-24 · Flex 2.5G · YuanLey PoE<br>
-        <img src="pictures/Logos/Homelab SVG/unifi.svg" alt="UniFi" style="max-height:30px;"> UniFi 6+ AP
-      </p>
-    </div>
-  </section>
 
-  <!-- Services -->
-  <section id="services" class="section alt">z
-    <div class="container">
-      <h2 class="section-title">Services</h2>
-      <div class="row text-center g-4">
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/plex.svg" alt="Plex" style="max-height:60px;" class="mb-2"><p>Plex</p></div>
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/truenas.svg" alt="TrueNAS" style="max-height:60px;" class="mb-2"><p>TrueNAS</p></div>
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/homeassistant.svg" alt="Home Assistant" style="max-height:60px;" class="mb-2"><p>Home Assistant</p></div>
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/frigate.svg" alt="Frigate" style="max-height:60px;" class="mb-2"><p>Frigate NVR</p></div>
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/pihole.svg" alt="Pi-hole" style="max-height:60px;" class="mb-2"><p>Pi-hole</p></div>
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/tautulli.svg" alt="Tautulli" style="max-height:60px;" class="mb-2"><p>Tautulli</p></div>
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/nextcloud.svg" alt="Nextcloud" style="max-height:60px;" class="mb-2"><p>Nextcloud</p></div>
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/tailscale.svg" alt="Tailscale" style="max-height:60px;" class="mb-2"><p>Tailscale</p></div>
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/monit.svg" alt="Monit" style="max-height:60px;" class="mb-2"><p>Monit</p></div>
-        <div class="col-6 col-md-3"><img src="pictures/Logos/Homelab SVG/nginx.svg" alt="Nginx" style="max-height:60px;" class="mb-2"><p>Nginx</p></div>
+      <div class="col-md-6 col-lg-4">
+        <div class="content-card p-3 h-100">
+          <img src="pictures/logos/homelab-svg/frigate.svg" alt="Frigate" style="max-height:60px;" class="mb-2">
+          <h5>Node 4 – Secondary</h5>
+          <p>Ryzen 5 3600 · RTX 3060<br>Hosts Frigate NVR, Obico AI, and secondary TrueNAS pools.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="content-card p-3 h-100">
+          <img src="pictures/logos/homelab-svg/nextcloud.svg" alt="Nextcloud" style="max-height:60px;" class="mb-2">
+          <h5>Remote Node</h5>
+          <p>Dell OptiPlex · Located offsite, used for backups and remote monitoring.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Storage -->
+<section id="storage" class="section alt">
+  <div class="container">
+    <h2 class="section-title">Storage</h2>
+    <p class="text-center mb-4">TrueNAS SCALE manages multiple ZFS pools across SAS and SATA drives.</p>
+    <div class="table-responsive">
+      <table class="table table-dark table-striped align-middle text-center">
+        <thead>
+          <tr>
+            <th>Pool</th>
+            <th>Configuration</th>
+            <th>Purpose</th>
+            <th>Redundancy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dirtmouth</td>
+            <td>256&nbsp;GB SSD</td>
+            <td>External cloud sync / quick share (Dropbox-style staging)</td>
+            <td>None (single disk)</td>
+          </tr>
+          <tr>
+            <td>Greenpath</td>
+            <td>2×4&nbsp;TB · RAIDZ1 (~3.6&nbsp;TB usable)</td>
+            <td>Primary photos & personal videos</td>
+            <td>Single-disk fault tolerance</td>
+          </tr>
+          <tr>
+            <td>Deepnest</td>
+            <td>4×2&nbsp;TB · RAIDZ1 (~6&nbsp;TB usable)</td>
+            <td>Overflow / backup for photos & videos</td>
+            <td>Single-disk fault tolerance</td>
+          </tr>
+          <tr>
+            <td>Bonebottom</td>
+            <td>1.5&nbsp;TB HDD</td>
+            <td>NVR / CCTV recordings</td>
+            <td>None (single disk)</td>
+          </tr>
+          <tr>
+            <td>Hornet</td>
+            <td>12&nbsp;TB HDD</td>
+            <td>Bulk Plex media (low priority)</td>
+            <td>None (single disk)</td>
+          </tr>
+          <tr>
+            <td>Knight</td>
+            <td>6×6&nbsp;TB SAS · RAIDZ2 (~24&nbsp;TB usable)</td>
+            <td>Main reliable storage → critical Plex + old shows</td>
+            <td>Two-disk fault tolerance</td>
+          </tr>
+          <tr>
+            <td>Forgotten Crossroads</td>
+            <td>1×4&nbsp;TB HDD (SMB via Tailscale)</td>
+            <td>Offsite computer share</td>
+            <td>None (remote single disk)</td>
+          </tr>
+          <tr>
+            <td>Archive</td>
+            <td>1×4&nbsp;TB WD NAS (USB external · SMB via Tailscale)</td>
+            <td>Archive / cold storage</td>
+            <td>None (external single disk)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-center mt-3 text-white-50">Daily scrubs · SMART health monitoring · Offsite replication</p>
+  </div>
+</section>
+
+ <!-- Networking -->
+<section id="networking" class="section">
+  <div class="container">
+    <h2 class="section-title">Networking</h2>
+    <p class="text-center mb-4">
+      Bell 3 Gbps Fiber → OpenWRT (PPPoE) → OPNsense (routing & firewall) → VLAN segmentation → multiple switches and APs.
+    </p>
+
+    <!-- Carousel -->
+    <div id="networkCarousel" class="carousel slide shadow-sm rounded-3" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="pictures/project-images/homelab/lathans-network-map.updated-drawio-1.png" 
+               class="d-block w-100 rounded-3" alt="High-Level Network Topology">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>High-Level Network Flow</h5>
+            <p>ISP Router → OpenWRT PPPoE → OPNsense VLAN Router → Switches & Access Points</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="pictures/project-images/homelab/lathans-network-map.updated-drawio-3.png" 
+               class="d-block w-100 rounded-3" alt="Rack Layout and Patch Panel">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Rack & Patch Panel View</h5>
+            <p>Color-coded cabling with Ubiquiti, YuanLey, and Proxmox nodes in the rack layout.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#networkCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#networkCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#networkCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#networkCarousel" data-bs-slide-to="1"></button>
       </div>
     </div>
-  </section>
 
-  <!-- IoT & Automation -->
-  <section id="iot" class="section">
-    <div class="container">
-      <h2 class="section-title">IoT & Automation</h2>
-      <ul>
-        <li>Lighting automation with sunrise/sunset triggers</li>
-        <li>Presence detection (iPhone + Tailscale) to toggle interior cameras</li>
-        <li>Laundry machine monitoring with smart plug</li>
-        <li>ESP32 + DHT22 sensors for temperature/humidity (server cabinet, rooms)</li>
-        <li>Automated fan control in rack for cooling</li>
-      </ul>
+    <!-- Subnet Table -->
+    <div class="table-responsive mt-4">
+      <table class="table table-bordered align-middle text-center">
+        <thead>
+          <tr>
+            <th>VLAN</th>
+            <th>Subnet</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>5</td><td>192.168.5.0/24</td><td>Trusted LAN (PCs, phones)</td></tr>
+          <tr><td>15</td><td>192.168.15.0/24</td><td>Servers</td></tr>
+          <tr><td>25</td><td>192.168.25.0/24</td><td>Media (TVs, consoles, Chromecast)</td></tr>
+          <tr><td>45</td><td>192.168.45.0/24</td><td>IoT devices (ESP32, sensors, switches)</td></tr>
+          <tr><td>70</td><td>192.168.70.0/24</td><td>CCTV cameras & NVR</td></tr>
+          <tr><td>—</td><td>192.168.10.0/24</td><td>Offsite subnet (remote node via Tailscale)</td></tr>
+        </tbody>
+      </table>
     </div>
-  </section>
+  </div>
+</section>
+
+
+
+ <!-- Services -->
+<section id="services" class="section alt">
+  <div class="container">
+    <h2 class="section-title">Services</h2>
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/plex.svg" alt="Plex" style="max-height:60px;" class="mb-2">
+        <p>Plex</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/truenas.svg" alt="TrueNAS" style="max-height:60px;" class="mb-2">
+        <p>TrueNAS</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/homeassistant.svg" alt="Home Assistant" style="max-height:60px;" class="mb-2">
+        <p>Home Assistant</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/frigate.svg" alt="Frigate" style="max-height:60px;" class="mb-2">
+        <p>Frigate NVR</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/pihole.svg" alt="Pi-hole" style="max-height:60px;" class="mb-2">
+        <p>Pi-hole</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/tautulli.svg" alt="Tautulli" style="max-height:60px;" class="mb-2">
+        <p>Tautulli</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/nextcloud.svg" alt="Nextcloud" style="max-height:60px;" class="mb-2">
+        <p>Nextcloud</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/tailscale.svg" alt="Tailscale" style="max-height:60px;" class="mb-2">
+        <p>Tailscale</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/monit.svg" alt="Monit" style="max-height:60px;" class="mb-2">
+        <p>Monit</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <img src="pictures/logos/homelab-svg/nginx.svg" alt="Nginx" style="max-height:60px;" class="mb-2">
+        <p>Nginx</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IoT & Automation -->
+<section id="iot" class="section">
+  <div class="container">
+    <h2 class="section-title">IoT & Automation</h2>
+    <p class="text-center mb-4">
+      This section outlines the automation layer of the homelab.  
+      Automation is primarily handled through <strong>Home Assistant</strong>, <strong>ESPHome</strong>, and <strong>Monit scripts</strong>, with dedicated displays for quick access.
+    </p>
+
+    <!-- High-level summary -->
+    <ul>
+      <li>Lighting automation with sunrise/sunset triggers</li>
+      <li>Presence detection (iPhone + Tailscale) to toggle interior cameras</li>
+      <li>Laundry machine monitoring with smart plug</li>
+      <li>ESP32 + DHT22 sensors for temperature/humidity (server cabinet, rooms)</li>
+      <li>Automated fan control in rack for cooling</li>
+    </ul>
+
+    <!-- Home Assistant Automations -->
+    <h4 class="mt-4">Home Assistant Automations</h4>
+    <ul>
+      <li><strong>Side Door Lock Automation</strong> — If the side door smart lock is left unlocked for 15 minutes, it automatically relocks.  
+      <em>Purpose: Improves security by preventing the door from being left unlocked.</em></li>
+
+      <li><strong>Sunset/Sunrise Kitchen Counter Lights</strong> — At sunset, the kitchen counter switches and lights turn on; at sunrise, they turn off.  
+      <em>Purpose: Provides automatic kitchen lighting based on daylight cycles.</em></li>
+
+      <li><strong>Kitchen Display</strong> — The kitchen dashboard powers off at midnight and powers back on at 8:00 AM.  
+      <em>Purpose: Ensures the Home Assistant dashboard is visible during the day but not wasting power overnight.</em></li>
+
+      <li><strong>Server Cabinet Cooling Control</strong> — A DHT22 sensor monitors cabinet temperature. If it rises above 30 °C, the exhaust fan turns on, and turns off when cooled.  
+      <em>Purpose: Prevents overheating of Proxmox nodes and storage.</em></li>
+
+      <li><strong>Camera Socket Presence Control</strong> — If both household members are away, the living room camera socket powers on and notifications are sent. If someone is home, it powers off with a confirmation alert.  
+      <em>Purpose: Automates CCTV power state with presence-based security alerts.</em></li>
+    </ul>
+
+    <!-- ESPHome Devices -->
+    <h4 class="mt-4">ESPHome Devices</h4>
+    <ul>
+      <li><strong>ESP32 DHT22 Sensors</strong> — Installed in the Kitchen, Server Cabinet, Computer Room, Bedroom, and Living Room. Monitor temperature and humidity, feeding data into Home Assistant.</li>
+      <li><strong>Custom Displays</strong> — ESP32-based screens show real-time room metrics. Future plan: add touch input for simple local controls.</li>
+    </ul>
+
+    <!-- Monitoring Displays -->
+    <h4 class="mt-4">Monitoring Displays</h4>
+    <ul>
+      <li><strong>Kitchen Monitor</strong> — Displays the Home Assistant dashboard with live sensor data, automations, and device states.</li>
+      <li><strong>Bedroom Tablet</strong> — Shows a self-hosted network monitoring dashboard (Proxmox nodes, TrueNAS, key services).</li>
+    </ul>
+
+    <!-- Monit Scripts -->
+    <h4 class="mt-4">Monit Scripts</h4>
+    <ul>
+      <li><strong>Service Monitoring</strong> — Plex, TrueNAS, Home Assistant, OPNsense, and UniFi Controller monitored with email alerts on failure.</li>
+      <li><strong>Router Health</strong> — Regular ping checks to OPNsense VM and ISP router; alerts if OPNsense goes offline.</li>
+      <li><strong>Disk SMART Reports</strong> — Daily reports summarize drive health, with warnings for aging disks or reallocated sectors.</li>
+    </ul>
+  </div>
+</section>
+
 
   <!-- Remote & Backup -->
   <section id="remote" class="section alt">
