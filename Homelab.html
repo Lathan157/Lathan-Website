@@ -59,7 +59,7 @@
     <div class="blob blob-3"></div>
   </header>
 
-  <!-- Infrastructure -->
+ <!-- Infrastructure -->
 <section id="infrastructure" class="section">
   <div class="container">
     <h2 class="section-title">Infrastructure</h2>
@@ -68,7 +68,7 @@
       
       <div class="col-md-6 col-lg-4">
         <div class="content-card p-3 h-100">
-          <img src="pictures/logos/homelab-svg/proxmox.svg" alt="Proxmox" style="max-height:60px;" class="mb-2">
+          <img src="pictures/Logos/Homelab SVG/proxmox.svg" alt="Proxmox" style="max-height:60px;" class="mb-2">
           <h5>Node 1 – Storage</h5>
           <p>Ryzen 5 3600 · 80GB RAM · RTX 3060<br>Primary TrueNAS SCALE host, multiple ZFS pools, Plex VM.</p>
         </div>
@@ -76,7 +76,7 @@
 
       <div class="col-md-6 col-lg-4">
         <div class="content-card p-3 h-100">
-          <img src="pictures/logos/homelab-svg/opnsense.svg" alt="OPNsense" style="max-height:60px;" class="mb-2">
+          <img src="pictures/Logos/Homelab SVG/opnsense.svg" alt="OPNsense" style="max-height:60px;" class="mb-2">
           <h5>Node 2 – Routing</h5>
           <p>i9-9900K · OPNsense VM (firewall/router), OpenWRT VM (PPPoE). Networking core.</p>
         </div>
@@ -84,7 +84,7 @@
 
       <div class="col-md-6 col-lg-4">
         <div class="content-card p-3 h-100">
-          <img src="pictures/logos/homelab-svg/tailscale.svg" alt="Tailscale" style="max-height:60px;" class="mb-2">
+          <img src="pictures/Logos/Homelab SVG/tailscale.svg" alt="Tailscale" style="max-height:60px;" class="mb-2">
           <h5>Node 3 – Remote Access</h5>
           <p>Intel N97 Mini PC · Runs Tailscale, Monit, and Nextcloud. Provides monitoring & diagnostics.</p>
         </div>
@@ -92,7 +92,7 @@
 
       <div class="col-md-6 col-lg-4">
         <div class="content-card p-3 h-100">
-          <img src="pictures/logos/homelab-svg/frigate.svg" alt="Frigate" style="max-height:60px;" class="mb-2">
+          <img src="pictures/Logos/Homelab SVG/frigate.svg" alt="Frigate" style="max-height:60px;" class="mb-2">
           <h5>Node 4 – Secondary</h5>
           <p>Ryzen 5 3600 · RTX 3060<br>Hosts Frigate NVR, Obico AI, and secondary TrueNAS pools.</p>
         </div>
@@ -100,7 +100,7 @@
 
       <div class="col-md-6 col-lg-4">
         <div class="content-card p-3 h-100">
-          <img src="pictures/logos/homelab-svg/nextcloud.svg" alt="Nextcloud" style="max-height:60px;" class="mb-2">
+          <img src="pictures/Logos/Homelab SVG/nextcloud.svg" alt="Nextcloud" style="max-height:60px;" class="mb-2">
           <h5>Remote Node</h5>
           <p>Dell OptiPlex · Located offsite, used for backups and remote monitoring.</p>
         </div>
@@ -193,27 +193,26 @@
     <div id="networkCarousel" class="carousel slide shadow-sm rounded-3" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-inner">
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <img src="pictures/project-images/homelab/lathans-network-map.updated-drawio-1.png" 
-               class="d-block w-100 rounded-3" alt="High-Level Network Topology">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>High-Level Network Flow</h5>
-            <p>ISP Router → OpenWRT PPPoE → OPNsense VLAN Router → Switches & Access Points</p>
-          </div>
-        </div>
+       <!-- Slide 1 -->
+<div class="carousel-item active">
+  <img src="pictures/Project-Images/Homelab/lathans-network-map.updated-drawio-1.png" 
+       class="d-block w-100 rounded-3" alt="High-Level Network Topology">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>High-Level Network Flow</h5>
+    <p>ISP Router → OpenWRT PPPoE → OPNsense VLAN Router → Switches & Access Points</p>
+  </div>
+</div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <img src="pictures/project-images/homelab/lathans-network-map.updated-drawio-3.png" 
-               class="d-block w-100 rounded-3" alt="Rack Layout and Patch Panel">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Rack & Patch Panel View</h5>
-            <p>Color-coded cabling with Ubiquiti, YuanLey, and Proxmox nodes in the rack layout.</p>
-          </div>
-        </div>
+<!-- Slide 2 -->
+<div class="carousel-item">
+  <img src="pictures/Project-Images/Homelab/lathans-network-map.updated-drawio-3.png" 
+       class="d-block w-100 rounded-3" alt="Rack Layout and Patch Panel">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>Rack & Patch Panel View</h5>
+    <p>Color-coded cabling with Ubiquiti, YuanLey, and Proxmox nodes in the rack layout.</p>
+  </div>
+</div>
 
-      </div>
 
       <!-- Controls -->
       <button class="carousel-control-prev" type="button" data-bs-target="#networkCarousel" data-bs-slide="prev">
@@ -255,54 +254,55 @@
 
 
 
- <!-- Services -->
+<!-- Services -->
 <section id="services" class="section alt">
   <div class="container">
     <h2 class="section-title">Services</h2>
     <div class="row text-center g-4">
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/plex.svg" alt="Plex" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/plex.svg" alt="Plex" style="max-height:60px;" class="mb-2">
         <p>Plex</p>
       </div>
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/truenas.svg" alt="TrueNAS" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/truenas.svg" alt="TrueNAS" style="max-height:60px;" class="mb-2">
         <p>TrueNAS</p>
       </div>
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/homeassistant.svg" alt="Home Assistant" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/homeassistant.svg" alt="Home Assistant" style="max-height:60px;" class="mb-2">
         <p>Home Assistant</p>
       </div>
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/frigate.svg" alt="Frigate" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/frigate.svg" alt="Frigate" style="max-height:60px;" class="mb-2">
         <p>Frigate NVR</p>
       </div>
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/pihole.svg" alt="Pi-hole" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/pihole.svg" alt="Pi-hole" style="max-height:60px;" class="mb-2">
         <p>Pi-hole</p>
       </div>
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/tautulli.svg" alt="Tautulli" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/tautulli.svg" alt="Tautulli" style="max-height:60px;" class="mb-2">
         <p>Tautulli</p>
       </div>
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/nextcloud.svg" alt="Nextcloud" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/nextcloud.svg" alt="Nextcloud" style="max-height:60px;" class="mb-2">
         <p>Nextcloud</p>
       </div>
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/tailscale.svg" alt="Tailscale" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/tailscale.svg" alt="Tailscale" style="max-height:60px;" class="mb-2">
         <p>Tailscale</p>
       </div>
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/monit.svg" alt="Monit" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/monit.svg" alt="Monit" style="max-height:60px;" class="mb-2">
         <p>Monit</p>
       </div>
       <div class="col-6 col-md-3">
-        <img src="pictures/logos/homelab-svg/nginx.svg" alt="Nginx" style="max-height:60px;" class="mb-2">
+        <img src="pictures/Logos/Homelab SVG/nginx.svg" alt="Nginx" style="max-height:60px;" class="mb-2">
         <p>Nginx</p>
       </div>
     </div>
   </div>
 </section>
+
 
 
 <!-- IoT & Automation -->
@@ -392,3 +392,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
