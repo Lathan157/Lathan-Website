@@ -204,3 +204,10 @@ img { max-width: 100%; height: auto; }
   transform: scale(1.2);
   filter: none; /* show original SVG colors on hover */
 }
+.carousel-item img {
+  max-height: 600px;   /* pick a height that works on your page */
+  object-fit: contain; /* scale down without cropping */
+  margin: 0 auto;      /* center horizontally */
+}
+
+
